@@ -266,14 +266,19 @@ Header intro
 
 .entry {
   overflow: hidden;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  break-inside: avoid;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.filterWrapper {
+  column-count: 3;
+  column-gap: 10px;
 }
 
 .entry-image {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
   z-index: 1;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
@@ -282,6 +287,12 @@ Header intro
 .entry:hover .entry-image {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+}
+.entry-image picture {
+  display: block;
+}
+.entry-image img {
+  width: 100%;
 }
 
 .work-entry-hover {
